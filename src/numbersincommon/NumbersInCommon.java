@@ -25,17 +25,19 @@ public class NumbersInCommon {
 
     public static String getNumbersInCommon(int array1[], int array2[]) {
         String result = "";
+        final Long startHashSetTime = System.nanoTime();
         HashSet map1 = new HashSet<Integer>(array1.length);
         for (int i = 0; i < array1.length; i++) {
             map1.add(array1[i]);
         }
-        
+
         for (int i = 0; i < array2.length; i++) {
             if (map1.contains(array2[i])) {
-                result += array2[i]+" ,";
+                result += array2[i] + " ,";
             }
         }
-
+        final Long endHashSetTime = System.nanoTime();
+        System.out.println("Time spent by HashSet: " + (endHashSetTime - startHashSetTime));
         return result;
     }
 
