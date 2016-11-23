@@ -26,7 +26,7 @@ public class NumbersInCommon {
     public static String getNumbersInCommon(int array1[], int array2[]) {
         String result = "";
         final Long startHashSetTime = System.nanoTime();
-        HashSet map1 = new HashSet<Integer>(array1.length);
+        HashSet<Integer> map1 = new HashSet<>(array1.length);
         for (int i = 0; i < array1.length; i++) {
             map1.add(array1[i]);
         }
